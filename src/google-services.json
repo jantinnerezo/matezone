@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "949845628337",
+    "firebase_url": "https://matezone-da44a.firebaseio.com",
+    "project_id": "matezone-da44a",
+    "storage_bucket": "matezone-da44a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949845628337:android:49577655a95f1399",
+        "android_client_info": {
+          "package_name": "com.silentroom.matezone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949845628337-vnsd7h95llaqjo2668ts4hpm6a0tis3b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3_1yFIdJVnE31EyhZjQa4VRYFQ6Z9Ebg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

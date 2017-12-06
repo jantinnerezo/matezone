@@ -1,0 +1,35 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title> <ion-icon name="create"></ion-icon> Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h3>Sign Up</h3>
+  <ion-list>
+
+	  <ion-item>
+	    <ion-label floating>Email</ion-label>
+	    <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label floating>Create a assword</ion-label>
+	    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+	  </ion-item>
+	
+	 <ion-grid>
+		  <ion-row>
+		    <ion-col col-12><button ion-button color="primary" block (click)="signup(user)">Sign Up</button></ion-col>
+		  </ion-row>
+	 </ion-grid>
+	
+
+</ion-list>
+
+</ion-content>
