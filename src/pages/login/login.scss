@@ -1,3 +1,62 @@
 page-login {
 
+    ion-grid {
+        height: 100% !important;
+        justify-content: center !important;
+    }
+
+    .bg-img{
+        height:100%;
+        width: 100%;
+        background-image: url('../../assets/imgs/login_bg.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .overlay{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #333;
+        opacity: 0.7;
+        
+    }
+
+    .page-title{
+        z-index: 1;
+
+        h1{
+            width: 100%;
+            color: #fff;
+            text-align: center;
+        }
+    }
+
+    .img-responsive{
+
+        justify-content: center;
+
+        img{
+            width: 30%;
+            height: 30%;
+            z-index: 1;
+        }
+    }
+
+    
+
+    .input-custom{
+        display: block;
+        width: 100%;
+        padding: 16px;
+        font-size: 1.2em;
+        border: 1px solid #dedede;
+        border-radius: 5px;
+    }
+    .input-custom:focus{
+
+        border: 1px solid #2196F3;
+    }
+
 }

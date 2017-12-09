@@ -2,34 +2,30 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title> <ion-icon name="create"></ion-icon> Sign Up</ion-title>
+		<ion-title>Create Account</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-
-  <h3>Sign Up</h3>
-  <ion-list>
-
-	  <ion-item>
-	    <ion-label floating>Email</ion-label>
-	    <ion-input type="email" [(ngModel)]="user.email"></ion-input>
-	  </ion-item>
-
-	  <ion-item>
-	    <ion-label floating>Create a assword</ion-label>
-	    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
-	  </ion-item>
-	
-	 <ion-grid>
-		  <ion-row>
-		    <ion-col col-12><button ion-button color="primary" block (click)="signup(user)">Sign Up</button></ion-col>
-		  </ion-row>
-	 </ion-grid>
-	
-
-</ion-list>
-
+<ion-content>
+	<div class="cover-signup">
+		<p class="cover-title">Sign Up</p>
+		<div class="overlay"></div>
+	</div>
+	<form [formGroup]="signUpForm">
+		<ion-grid padding>
+			<ion-row>
+				<ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3><input type="text" [(ngModel)]="signup.lastname" formControlName="lastname" class="input-custom" placeholder="Last Name"><p *ngIf="signUpForm.controls['lastname'].errors && signUpForm.controls['lastname'].dirty" class="invalid" padding-left>You don't have last name?</p></ion-col>
+				<ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3><input type="text" [(ngModel)]="signup.firstname" formControlName="firstname" class="input-custom" placeholder="First Name"><p *ngIf="signUpForm.controls['firstname'].errors && signUpForm.controls['firstname'].dirty" class="invalid" padding-left >You don't have first name?</p></ion-col>
+				<ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3><input type="text" [(ngModel)]="signup.username" formControlName="username" class="input-custom" placeholder="Username"><p *ngIf="signUpForm.controls['username'].errors && signUpForm.controls['username'].dirty" class="invalid" padding-left >Please choose your username.</p> <p class="invalid" padding-left *ngIf="username_exist"> Username is already taken!</p></ion-col>
+				<ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3><input type="password" [(ngModel)]="signup.password" formControlName="password" class="input-custom" placeholder="Password"><p *ngIf="signUpForm.controls['password'].errors && signUpForm.controls['password'].dirty" class="invalid" padding-left >Password must be at least 8 characters and it's required</p></ion-col>
+				<ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3><input type="password" [(ngModel)]="signup.password1" formControlName="password1" class="input-custom" placeholder="Repeat password"><p *ngIf="signUpForm.controls['password1'].errors && signUpForm.controls['password1'].dirty" class="invalid" padding-left >Repeat created password!</p><p *ngIf="not_matched" padding-left class="invalid">Password created mismatch!</p></ion-col>
+				<ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3><input type="email" [(ngModel)]="signup.email"  formControlName="email" class="input-custom" placeholder="Email"><p *ngIf="signUpForm.controls['email'].errors && signUpForm.controls['email'].dirty" class="invalid" padding-left >Email address is required.</p><p class="invalid" padding-left *ngIf="email_exist"> Email already exist!</p></ion-col>
+				<ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3><ion-datetime displayFormat="MMMM DD, YYYY" pickerFormat="MMMM DD YYYY" [(ngModel)]="signup.birth_date" formControlName="birth_date" class="input-custom" placeholder="Birth day"></ion-datetime><p *ngIf="signUpForm.controls['birth_date'].errors && signUpForm.controls['birth_date'].dirty" class="invalid" padding-left >Please provide your date of birth</p></ion-col>
+				<ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3><input [(ngModel)]="signup.gender"  formControlName="gender" class="input-custom" placeholder="Gender" readonly (click)="selectGender()">
+						<p *ngIf="signUpForm.controls['gender'].errors && signUpForm.controls['gender'].dirty" class="invalid" padding-left >Required to identify your gender</p></ion-col>
+				<ion-col col-12 col-sm-9 col-md-6 col-lg-4 col-xl-3><button ion-button color="primary" block (click)="onSignUp()" [disabled]="!signUpForm.valid" type="submit" large>Sign Up</button> </ion-col>
+			</ion-row>
+		</ion-grid>
+	</form>
 </ion-content>
